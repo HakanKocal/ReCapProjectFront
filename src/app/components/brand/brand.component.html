@@ -1,0 +1,18 @@
+<div class="card mt-2">
+	<article class="card-group-item">
+		<header class="card-header" style="background-color:rgb(0, 153, 51) ;">
+			<h6 class="title">Brand </h6>
+		</header>
+		<div class="filter-content">
+			<div class="card-body" style="background-color: #f2f2f2;">
+			<form>
+				<label class="form-check" *ngFor="let brand of brands">
+				  <input class="form-check-input" type="checkbox" value="">
+				  <span (click)="setCurrentBrand(brand)" routerLink="/cars/brand/{{brand.brandId}}" class="form-check-label" >
+				    {{brand.brandName}}
+				  </span>
+				</label> 
+			</form>
+
+			</div> 
+		</div>

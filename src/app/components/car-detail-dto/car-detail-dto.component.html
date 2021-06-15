@@ -1,0 +1,54 @@
+<!-- 
+<div class="card-group">
+  <div class="row">
+  <div class="col-4" *ngFor="let car of carDtoDetails" style="margin-top:15px;" >
+      <div class="card" style="background-color: #f2f2f2;">      
+          <img src="https://localhost:44351{{car.carImage[0].imagePath}}" class="card-img-top" style="width: 100%;height: 250px;" alt="...">
+          <div class="card-body" >
+            <h5 class="card-title">{{car.carName}}</h5>
+
+          </div>
+      </div>
+  </div>
+  </div>
+</div> -->
+<div class="card" style="margin-top: 1.2%;padding-bottom: 19px;">
+  <div class="card-body" *ngFor="let car of carDtoDetails">
+    <h1 style="margin-left: 2%;">{{car.carName}} {{car.descriptions}}</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-9"><img src="https://localhost:44351{{car.carImage[0].imagePath}}" class="img-fluid" style=" border-radius: 5px;" alt="..."></div>
+        <div class="col-3">
+          <div class="card">
+            <div class="card-body">
+              <h2>Marka : {{car.carName}}</h2>
+              <h2>Model : {{car.descriptions}}</h2>
+              <h2>Yıl : {{car.modelYear}}</h2>
+              <h2>Renk : {{car.colorName}}</h2>
+              <div class="d-flex justify-content-end" style="margin-top: 17%;" >
+                <button type="button" class="btn btn-primary ">Detaylı Bilgi</button>
+                <button type="button" class="btn btn-success" style="margin-left: 5px;" >Kirala</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+      <div class="col-2">
+        <div *ngIf="car.carImage[1]"><img src="https://localhost:44351{{car.carImage[1].imagePath}}" class="img-thumbnail" style="width: 200px;" alt="..."></div>
+      </div>
+      <div class="col-2">
+        <div *ngIf="car.carImage[2]"><img src="https://localhost:44351{{car.carImage[2].imagePath}}" class="img-thumbnail" style="width: 200px;" alt="..."></div>
+      </div>
+      <div class="col-2">
+        <div *ngIf="car.carImage[3]"><img src="https://localhost:44351{{car.carImage[3].imagePath}}" class="img-thumbnail" style="width: 200px;" alt="..."></div>
+      </div>
+
+      </div>
+
+    </div>
+    
+    
+  </div>
+</div>
