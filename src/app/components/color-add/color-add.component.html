@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="context">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header"><h4>Renk Ekle</h4></div>
+          <div class="card-body">
+              <form [formGroup]="colorAddForm">
+                <div class="mb-3">
+                    <label for="colorId">Renk Id</label>
+                    <div class="form-group">
+                      <input
+                        type="number"
+                        id="colorId"
+                        formControlName="colorId"
+                        class="form-control"
+                        placeholder="Araba Adı"
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="colorName">Renk Adı</label>
+                    <div class="form-group">
+                      <input
+                        type="number"
+                        id="colorName"
+                        formControlName="colorName"
+                        class="form-control"
+                        placeholder="Araba Adı"
+                      />
+                    </div>
+                  </div>
+                </form>
+
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-success float-end" (click)="add()">Ekle</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    

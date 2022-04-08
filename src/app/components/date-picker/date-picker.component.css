@@ -1,0 +1,10 @@
+::ng-deep datepicker-value-example .mat-form-field-label{
+    color:grey;
+ }
+ 
+ ::ng-deep .mat-datepicker-toggle{
+    color:grey;
+ }
+ ::ng-deep .mat-form-field-underline{
+ background: grey;
+ }

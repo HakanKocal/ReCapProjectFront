@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit,  } from '@angular/core';
+import { CarService } from 'src/app/services/car.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
+  filterCar="";
+  constructor(private carService:CarService) { }
 
   ngOnInit(): void {
   }
-
+  // search()
+  // {
+  //   this.carService.getSearchKey(this.filterCar);
+  // }
 }

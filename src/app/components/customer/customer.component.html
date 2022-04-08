@@ -5,14 +5,11 @@
 		</header>
 		<div class="filter-content">
 			<div class="card-body" style="background-color: #f2f2f2;">
-			<form>
-				<label class="form-check" *ngFor="let customer of customers">
-				  <input class="form-check-input" type="checkbox" value="">
-				  <span class="form-check-label" >
-				    {{customer.companyName}}
-				  </span>
-				</label> 
-			</form>
-
+				<ul class="list-group">
+					<li (click)="setCurrentCustomer(customer)" [class]="getCurrentCustomerClass(customer)"  *ngFor="let customer of customers" routerLink="/cars/customer/{{customer.UserId}}"> {{customer.companyName}} </li>
+				  </ul>
 			</div> <!-- card-body.// -->
 		</div>
+		</article>
+		</div>
+		

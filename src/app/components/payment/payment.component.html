@@ -1,0 +1,50 @@
+<div style="width: 1280px;height: 290px; background-color: white; margin: auto; margin-top: 1.3rem; border-radius: 2px;">
+<div *ngFor="let car of carDtoDetails">
+
+    <div class="row">
+      <div class="col-5"><img src="https://localhost:44351/{{car.carImage[0].imagePath}}" class="img-fluid" style=" border-radius: 2px;" alt="..."></div>
+      <div class="col-7">
+        <h2>Marka: {{car.carName}}</h2>
+        <h3>Model Yılı: {{car.modelYear}}</h3>
+        <h3>Renk :{{car.colorName}}</h3>
+        <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 170px;"> 
+          <div class="mt-auto p-2 bd-highlight"><h4>Günlük Ücret: {{rentPrice }} Tl</h4></div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+<div style="width: 1280px;height: 270px; background-color: white; margin: auto; margin-top: 1.3rem; border-radius: 2px;">
+  <div class="container ">
+    <div class="row">
+      <div class="col-4">
+        <label for="basic-url mt-2" class="form-label">Kart Sahip İsim-Soyad</label>
+        <div class="input-group flex-nowrap ">
+          <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+        <label for="basic-url mt-2" class="form-label">Kart Numarası</label>
+        <div class="input-group flex-nowrap ">
+          <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+        <label for="basic-url mt-2" class="form-label">Your vanity URL</label>
+        <div class="input-group flex-nowrap ">
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Tarih</option>
+            <option value="1">20</option>
+            <option value="2">21</option>
+            <option value="3">22</option>
+            <option value="4">23</option>
+            <option value="5">24</option>
+            <option value="6">25</option>
+          </select>
+          <input type="number" class="form-control" aria-label="Username" placeholder="CVV" aria-describedby="addon-wrapping">
+        </div>
+        <div class="mt-2 float-end">
+          <button type="button" class="btn btn-success" (click)="pay()">Öde</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

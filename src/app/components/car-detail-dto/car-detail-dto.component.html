@@ -17,7 +17,7 @@
     <h1 style="margin-left: 2%;">{{car.carName}} {{car.descriptions}}</h1>
     <div class="container">
       <div class="row">
-        <div class="col-9"><img src="https://localhost:44351{{car.carImage[0].imagePath}}" class="img-fluid" style=" border-radius: 5px;" alt="..."></div>
+        <div class="col-9"><img src="https://localhost:44351/{{car.carImage[0].imagePath}}" class="img-fluid" style=" border-radius: 5px;" alt="..."></div>
         <div class="col-3">
           <div class="card">
             <div class="card-body">
@@ -25,9 +25,15 @@
               <h2>Model : {{car.descriptions}}</h2>
               <h2>Yıl : {{car.modelYear}}</h2>
               <h2>Renk : {{car.colorName}}</h2>
+              
+
+              
+              <app-date-picker></app-date-picker>
+              
               <div class="d-flex justify-content-end" style="margin-top: 17%;" >
                 <button type="button" class="btn btn-primary ">Detaylı Bilgi</button>
-                <button type="button" class="btn btn-success" style="margin-left: 5px;" >Kirala</button>
+                <button type="button" class="btn btn-warning" (click)="edit(car.carId)">Güncelle</button>
+                <button type="button" class="btn btn-success" style="margin-left: 5px;" (click)="pay(car.carId)" >Kirala</button>
               </div>
             </div>
           </div>

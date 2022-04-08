@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="context">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header"><h4>Araba Güncelle</h4></div>
+          <div class="card-body">
+              <form [formGroup]="carUpdateForm">
+                <div class="mb-3">
+                    <label for="id">Car Id</label>
+                    <div class="form-group">
+                      <input
+                        type="number"
+                        id="id"
+                        formControlName="id"
+                        class="form-control"
+                        placeholder="Araba Id"
+                      />
+                    </div>
+                    </div>
+                  <div class="mb-3">
+                    <label for="description">Araba Adı</label>
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        id="description"
+                        formControlName="description"
+                        class="form-control"
+                        placeholder="Araba Adı"
+                      />
+                    </div>
+                  </div>
+                      <div class="mb-3">
+                        <label for="brandId">Marka Id</label>
+                        <div class="form-group">
+                          <input
+                            type="number"
+                            id="brandId"
+                            formControlName="brandId"
+                            class="form-control"
+                            placeholder="Marka Adı"
+                             
+                          />
+                        </div>
+                      </div>
+                  
+                          <div class="mb-3">
+                            <label for="colorId">Renk Id</label>
+                            <div class="form-group">
+                              <input
+                                type="number"
+                                id="colorId"
+                                formControlName="colorId"
+                                class="form-control"
+                                placeholder="Renk Adı"
+                                 
+                              />
+                            </div>
+                          </div>
+                        
+                              <div class="mb-3">
+                                <label for="modelYear">Model Yılı</label>
+                                <div class="form-group">
+                                  <input
+                                    type="number"
+                                    id="modelYear"
+                                    formControlName="modelYear"
+                                    class="form-control"
+                                    placeholder="Model Yılı"
+                                  />
+                                </div>
+                              </div>
+                              
+                                  <div class="mb-3">
+                                    <label for="dailyPrice">Fiyatı</label>
+                                    <div class="form-group">
+                                      <input
+                                        type="number"
+                                        id="dailyPrice"
+                                        formControlName="dailyPrice"
+                                        class="form-control"
+                                        placeholder="Fiyatı"
+                                      />
+                                    </div>
+                                  </div>
+                                  
+                                  
+                  </form>
+  
+          </div>
+          <div class="card-footer">
+              <button class="btn btn-fill btn-success float-end" (click)="update()">Ekle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

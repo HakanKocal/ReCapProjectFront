@@ -5,14 +5,16 @@
 		</header>
 		<div class="filter-content">
 			<div class="card-body" style="background-color: #f2f2f2;">
-			<form>
-				<label class="form-check" *ngFor="let color of colors">
-				  <input class="form-check-input" type="checkbox" value="">
-				  <span (click)="setCurrentColor(color)" routerLink="/cars/color/{{color.colorId}}" class="form-check-label" >
-				    {{color.colorName}}
-				  </span>
-				</label> 
-			</form>
-
+					<div class="mb-3">
+				<label for="filterColor" class="form-label" class="marka">Markalar</label>
+				<input type="text" [(ngModel)]="filterColor" class="form-control" id="filterColor" placeholder="marka giriniz">
+			  </div>
+			  <div class="alert alert-success">
+				  {{filterColor}} aradınız
+			  </div>
+			<ul class="list-group" *ngFor="let color of colors |colorfilter:filterColor">
+				<li [class]="getCurrentColorClass(color)" (click)="setCurrentColor(color)" routerLink="/cars/color/{{color.colorId}}" >{{color.colorName}}</li>
+			</ul>
 			</div> 
+		</div>
 			

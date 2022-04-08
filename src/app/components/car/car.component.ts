@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Car } from 'src/app/models/car';
 import { CarDetaildto } from 'src/app/models/car-detail-dto';
+import { CarImage } from 'src/app/models/carImage';
 import { CarService } from 'src/app/services/car.service';
+import { CarImageService } from 'src/app/services/carimage.service';
 
 
 @Component({
@@ -13,12 +15,16 @@ import { CarService } from 'src/app/services/car.service';
 export class CarComponent implements OnInit {
   dataLoaded=false;
   carDtoDetails:CarDetaildto[]=[];
-  constructor(private carService:CarService,private activetedRoute:ActivatedRoute) { }
-
+  carImages:CarImage[]=[];
+  constructor(private carService:CarService,private activetedRoute:ActivatedRoute,private ImageService:CarImageService) { }
+  filteredCar="";
   ngOnInit(): void {
     console.log("1.")
     this.activetedRoute.params.subscribe(params=>{
-      if(params["colorId"])
+      if(params["brandId"] && params['colorId'] && params['colorId'] && params['minDailyPrice'] && params['maxDailyPrice']){
+        this.getFilter(params["brandId"], params['colorId'],params['minDailyPrice'],params['maxDailyPrice']);
+      }
+      else if(params["colorId"])
       {
         this.getCarByColor(params["colorId"])
       }
@@ -30,6 +36,7 @@ export class CarComponent implements OnInit {
       {
         this.getCarDetailDto();
       }
+
     })
 
   }
@@ -40,6 +47,7 @@ export class CarComponent implements OnInit {
       this.dataLoaded=true;
     })
   }
+
   getCarByColor(colorId:number)
   {
     this.carService.getCarByColor(colorId).subscribe(Response=>
@@ -56,4 +64,13 @@ export class CarComponent implements OnInit {
         this.dataLoaded = true;
       })
     }
+    getFilter(brandId:number,colorId:number,minDailyPrice:number,maxDailyPrice:number)
+    {
+      this.carService.getFilter(brandId,colorId,minDailyPrice,maxDailyPrice).subscribe(repsonse=>{
+        this.carDtoDetails=repsonse.data;
+        this.dataLoaded=true;
+      })
+    }
+
+   
 }

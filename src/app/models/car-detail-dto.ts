@@ -10,5 +10,5 @@ export interface CarDetaildto{
     modelYear:number,
     dailyPrice:number,
     descriptions:string,
-    carImage:CarImage[],
+    carImage:CarImage,
 }
